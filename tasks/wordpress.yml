@@ -13,7 +13,7 @@
   register: wp_config
 
 - name: "Fetch salts for wordpress config"
-  command: curl https://api.wordpress.org/secret-key/1.1/salt/
+  command: get_url https://api.wordpress.org/secret-key/1.1/salt/
   register: "wp_salt"
   when: not wp_config.stat.exists
 
